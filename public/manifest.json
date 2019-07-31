@@ -1,15 +1,27 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "manifest_version": 2,
+  "name": "purify",
+  "author": "wang pin",
+  "version": "0.0.1",
+  "description": "Purify the web pages by removing images and style-sheets, etc",
+  "browser_action": {
+    "default_icon": {              
+      "16": "Icon-16.png",
+      "48": "Icon-48.png"
+    },
+    "default_title": "Purify",
+    "default_popup": "index.html"  
+  },
+  "icons": {
+    "16": "Icon-16.png",
+    "48": "Icon-48.png",
+    "128": "Icon-128.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "content_scripts": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "matches": ["<all_urls>"],
+      "include_globs": ["static/js/*.js"]
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
