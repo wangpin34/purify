@@ -10,18 +10,23 @@
       "48": "Icon-48.png"
     },
     "default_title": "Purify",
-    "default_popup": "index.html"  
+    "default_popup": ""  
   },
   "icons": {
     "16": "Icon-16.png",
     "48": "Icon-48.png",
     "128": "Icon-128.png"
   },
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab", "contextMenus", "tabs"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "include_globs": ["static/js/*.js"]
+      "js": ["static/js/main.js"],
+      "css": ["static/css/main.css"]
     }
   ]
 }
