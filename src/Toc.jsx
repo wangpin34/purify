@@ -32,7 +32,8 @@ export default createComponent(() => ({
     }
 
     .toc-content {
-      & > h1.toc, & > h2.toc, & > h3.toc, & > h4.toc, & > h5.toc, & > h6.toc {
+      overflow-y: auto;
+      h1.toc, h2.toc, h3.toc, h4.toc, h5.toc, h6.toc {
         font-size: 14px;
         margin: 0.5em 0;
         background-color: unset;
@@ -40,6 +41,22 @@ export default createComponent(() => ({
           color: #3498db;;
           text-decoration: none;
         }
+      }
+
+      h2.toc {
+        padding-left: 8px;
+      }
+      h3.toc {
+        padding-left: 16px;
+      }
+      h4.toc {
+        padding-left: 24px;
+      }
+      h5.toc {
+        padding-left: 32px;
+      }
+      h6.toc {
+        padding-left: 40px;
       }
     }
   `,
